@@ -264,11 +264,11 @@ public:
 int main(int argc, char** argv)
 {
     srand(time(NULL));
-//    if(argc != 2){
-//        cout << "Usage: " << argv[0] << " [filename]\n";
-//        return 0;
-//    }
-    fstream file("ex.bf", fstream::in);
+    if(argc != 2){
+        cout << "Usage: " << argv[0] << " [filename]\n";
+        return 0;
+    }
+    fstream file(argv[1], fstream::in);
     Interpretor i(file);
     file.close();
     while(!i.endProg){
